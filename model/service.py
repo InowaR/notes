@@ -16,4 +16,7 @@ class Service():
         self.id += 1
 
     def show_all_notes(self):
-        self.notes.show_all_notes()
+        print(self.notes.show_all_notes())
+
+    def find_note_by_id(self, id):
+        self.notes.find_note_by_id(id)
