@@ -1,11 +1,12 @@
-import datetime
-
 class Note():
-    def __init__(self, id, title, body) -> None:
+    def __init__(self, id, title, body, date):
         self.id = id
         self.title = title
         self.body = body
-        self.date = datetime.datetime.today()
+        self.date = date
 
     def __str__(self) -> str:
-        return f'{self.id}, {self.title}, {self.body}, {self.date.strftime("%Y-%m-%d-%H.%M.%S")}'
+        return f'Заметка: {self.id}, Имя: {self.title}, Тело: {self.body}, Дата: {self.date.strftime("%Y-%m-%d-%H.%M.%S")}'
+    
+    def get_id(self):
+        return self.id

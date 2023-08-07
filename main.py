@@ -1,7 +1,7 @@
-from view.view import ConsoleView
+from view.console_view import ConsoleView
 
 def main():
     view = ConsoleView()
     view.start_application()
 
-
+main()
