@@ -1,6 +1,6 @@
-class CreateNote():
+class Exit():
     def __init__(self):
-        self.name = "Добавить заметку"
+        self.name = "Выход"
     
     def get_name(self):
         return self.name

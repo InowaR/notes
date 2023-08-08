@@ -14,5 +14,3 @@ class ListNotes():
             if note.get_id() == id:
                 print("Заметка найдена")
                 print(note)
-            else:
-                print("Нет заметки с таким ID")
