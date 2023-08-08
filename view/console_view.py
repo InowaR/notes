@@ -7,13 +7,15 @@ class ConsoleView():
 
     def start_application(self):
         print("Заметки")
+        print("Нажмите 'q' для выхода")
         while(self.work):
             self.menu.print_main_menu()
-            number = int(input("Введите номер команды:"))
-            if number == 3:
+            command = input("Введите номер команды: ")
+            if command == 'q':
                 self.finish()
-            else:
-                self.menu.execute(number)
+                break
+            number = int(command)
+            self.menu.execute(number)
 
     def finish(self):
         print("Выход")

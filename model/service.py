@@ -1,3 +1,4 @@
+import csv
 import datetime
 from model.list_notes import ListNotes
 from model.note import Note
@@ -20,3 +21,9 @@ class Service():
 
     def find_note_by_id(self, id):
         self.notes.find_note_by_id(id)
+
+    def save_notes(self):
+        self.notes.save_notes()
+
+    def load_notes(self):
+        self.notes.load_notes()

@@ -15,3 +15,9 @@ class Presenter():
     def find_note_by_id(self):
         id = int(input("Введите номер ID: "))
         self.service.find_note_by_id(id)
+
+    def save_notes(self):
+        self.service.save_notes()
+
+    def load_notes(self):
+        self.service.load_notes()
