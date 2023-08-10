@@ -18,7 +18,7 @@ class ListNotes():
     
     def find_note_by_id(self, id):
         for note in self.list_notes:
-            if note.get_id() == id:
+            if note.id == id:
                 print("Заметка найдена")
                 print(note)
 
@@ -29,7 +29,7 @@ class ListNotes():
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for note in self.list_notes:
-                writer.writerow({'id': note.get_id(), 'title': note.get_title(), 'body': note.get_body(), 'date': note.get_date().strftime('%Y-%m-%d %H:%M:%S')})
+                writer.writerow({'id': note.id, 'title': note.title, 'body': note.body, 'date': note.date.strftime('%Y-%m-%d %H:%M:%S')})
         print("Заметки сохранены")
 
     def load_notes(self):
@@ -46,15 +46,15 @@ class ListNotes():
 
     def edit_note(self, id, title, body):
         for note in self.list_notes:
-            if note.get_id() == id:
-                note.set_title(title)
-                note.set_body(body)
-                note.set_date()
+            if note.id == id:
+                note.title = title
+                note.body = body
+                note.date
         print("Заметка изменена")
 
     def delete_note(self, id):
         for note in self.list_notes:
-            if note.get_id() == id:
+            if note.id == id:
                 self.list_notes.remove(note)
         print("Заметка удалена")
 

@@ -17,7 +17,7 @@ class Service():
     def create_note(self, title, body):
         note = Note(self.id, title, body, self.date)
         print(note)
-        print(note.get_id())
+        print(note.id)
         self.notes.add_note(note)
         self.id += 1
 

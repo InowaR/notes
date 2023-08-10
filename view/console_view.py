@@ -14,8 +14,11 @@ class ConsoleView():
             if command == 'q':
                 self.finish()
                 break
-            number = int(command)
-            self.menu.execute(number)
+            try:
+                number = int(command)
+                self.menu.execute(number)
+            except ValueError:
+                print("Ошибка. Введите число.")
 
     def finish(self):
         print("Выход")
