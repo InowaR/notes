@@ -38,3 +38,4 @@ class Service():
 
     def delete_note(self, id):
         self.notes.delete_note(id)
+        self.id -= 1

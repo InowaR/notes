@@ -30,7 +30,7 @@ class ListNotes():
             writer.writeheader()
             for note in self.list_notes:
                 writer.writerow({'id': note.get_id(), 'title': note.get_title(), 'body': note.get_body(), 'date': note.get_date().strftime('%Y-%m-%d %H:%M:%S')})
-        print("Заметка сохранена")
+        print("Заметки сохранены")
 
     def load_notes(self):
         filename = 'notes.csv'
@@ -42,7 +42,7 @@ class ListNotes():
                 body = row['body']
                 date = datetime.datetime.strptime(row['date'], '%Y-%m-%d %H:%M:%S')
                 self.list_notes.append(Note(id, title, body, date))
-        print("Заметка загружена")
+        print("Заметки загружены")
 
     def edit_note(self, id, title, body):
         for note in self.list_notes:
@@ -50,12 +50,13 @@ class ListNotes():
                 note.set_title(title)
                 note.set_body(body)
                 note.set_date()
+        print("Заметка изменена")
 
     def delete_note(self, id):
         for note in self.list_notes:
             if note.get_id() == id:
                 self.list_notes.remove(note)
-
+        print("Заметка удалена")
 
 
         

@@ -1,6 +1,6 @@
 class LoadNotes():
     def __init__(self, presenter):
-        self.name = "Загрузить заметку"
+        self.name = "Загрузить заметки из файла"
         self.presenter = presenter
     
     def get_name(self):

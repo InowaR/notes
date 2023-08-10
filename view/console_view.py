@@ -20,11 +20,3 @@ class ConsoleView():
     def finish(self):
         print("Выход")
         self.work = False
-
-
-
-            
-
-        
-            
-

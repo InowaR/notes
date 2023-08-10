@@ -1,6 +1,6 @@
 class SaveNotes():
     def __init__(self, presenter):
-        self.name = "Сохранить заметку"
+        self.name = "Сохранить заметки в файл"
         self.presenter = presenter
     
     def get_name(self):
