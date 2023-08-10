@@ -44,13 +44,17 @@ class ListNotes():
                 self.list_notes.append(Note(id, title, body, date))
         print("Заметка загружена")
 
-    
     def edit_note(self, id, title, body):
         for note in self.list_notes:
             if note.get_id() == id:
                 note.set_title(title)
                 note.set_body(body)
                 note.set_date()
+
+    def delete_note(self, id):
+        for note in self.list_notes:
+            if note.get_id() == id:
+                self.list_notes.remove(note)
 
 
 

@@ -27,3 +27,7 @@ class Presenter():
         title = input("Введите новое название заметки:\n")
         body = input ("Введите новое тело заметки:\n")
         self.service.edit_note(id, title, body)
+
+    def delete_note(self):
+        id = int(input("Для удаления введите ID заметки:\n"))
+        self.service.delete_note(id)

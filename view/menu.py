@@ -1,4 +1,5 @@
 from presenter.presenter import Presenter
+from view.commands.delete_note import DeleteNote
 from view.commands.edit_note import EditNote
 from view.commands.find_note_by_id import FindNoteById
 from view.commands.create_note import CreateNote
@@ -16,6 +17,7 @@ class Menu():
         self.commands_main_menu.append(SaveNotes(self.presenter))
         self.commands_main_menu.append(LoadNotes(self.presenter))
         self.commands_main_menu.append(EditNote(self.presenter))
+        self.commands_main_menu.append(DeleteNote(self.presenter))
 
     def print_main_menu(self):
         print("Меню:")

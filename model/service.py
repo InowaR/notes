@@ -29,3 +29,6 @@ class Service():
 
     def edit_note(self, id, title, body):
         self.notes.edit_note(id, title, body)
+
+    def delete_note(self, id):
+        self.notes.delete_note(id)
