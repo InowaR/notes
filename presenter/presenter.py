@@ -19,6 +19,10 @@ class Presenter():
         except ValueError:
             print("Ошибка. Введите число.")
 
+    def find_note_by_title(self):
+        title = input("Введите название заметки: ")
+        self.service.find_note_by_title(title)
+
     def save_notes(self):
         self.service.save_notes()
 

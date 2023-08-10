@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import datetime
 from model.note import Note
 
 class ListNotes():
@@ -22,6 +22,12 @@ class ListNotes():
                 print("Заметка найдена")
                 print(note)
 
+    def find_note_by_title(self, title):
+        for note in self.list_notes:
+            if note.title == title:
+                print("Заметка найдена")
+                print(note)
+
     def save_notes(self):
         filename = 'notes.csv'
         with open(filename, 'w', newline='') as csvfile:
@@ -40,7 +46,7 @@ class ListNotes():
                 id = int(row['id'])
                 title = row['title']
                 body = row['body']
-                date = datetime.datetime.strptime(row['date'], '%Y-%m-%d %H:%M:%S')
+                date = datetime.strptime(row['date'], '%Y-%m-%d %H:%M:%S')
                 self.list_notes.append(Note(id, title, body, date))
         print("Заметки загружены")
 

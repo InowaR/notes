@@ -1,11 +1,11 @@
-import datetime
+from datetime import datetime
 from model.list_notes import ListNotes
 from model.note import Note
 
 class Service():
     def __init__(self):
         self.id = 0
-        self.date = datetime.datetime.today()
+        self.date = datetime.today()
         self.notes = ListNotes()
 
     def get_length(self):
@@ -15,7 +15,7 @@ class Service():
         self.id = id
 
     def create_note(self, title, body):
-        date = datetime.datetime.today()
+        date = datetime.today()
         note = Note(self.id, title, body, date)
         self.notes.add_note(note)
         self.notes.update_id()
@@ -26,6 +26,9 @@ class Service():
     def find_note_by_id(self, id):
         self.notes.find_note_by_id(id)
 
+    def find_note_by_title(self, title):
+        self.notes.find_note_by_title(title)
+
     def save_notes(self):
         self.notes.save_notes()
 
@@ -33,7 +36,7 @@ class Service():
         self.notes.load_notes()
 
     def edit_note(self, id, title, body):
-        date = datetime.datetime.today()
+        date = datetime.today()
         self.notes.edit_note(id, title, body, date)
 
     def delete_note(self, id):
