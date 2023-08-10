@@ -2,7 +2,6 @@ import csv
 import datetime
 from model.note import Note
 
-
 class ListNotes():
     def __init__(self):
         self.list_notes = []
@@ -44,6 +43,14 @@ class ListNotes():
                 date = datetime.datetime.strptime(row['date'], '%Y-%m-%d %H:%M:%S')
                 self.list_notes.append(Note(id, title, body, date))
         print("Заметка загружена")
+
+    
+    def edit_note(self, id, title, body):
+        for note in self.list_notes:
+            if note.get_id() == id:
+                note.set_title(title)
+                note.set_body(body)
+                note.set_date()
 
 
 

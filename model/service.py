@@ -1,4 +1,3 @@
-import csv
 import datetime
 from model.list_notes import ListNotes
 from model.note import Note
@@ -27,3 +26,6 @@ class Service():
 
     def load_notes(self):
         self.notes.load_notes()
+
+    def edit_note(self, id, title, body):
+        self.notes.edit_note(id, title, body)

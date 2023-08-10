@@ -21,3 +21,9 @@ class Presenter():
 
     def load_notes(self):
         self.service.load_notes()
+
+    def edit_note(self):
+        id = int(input("Для редактирования введите ID заметки:\n"))
+        title = input("Введите новое название заметки:\n")
+        body = input ("Введите новое тело заметки:\n")
+        self.service.edit_note(id, title, body)
