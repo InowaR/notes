@@ -15,11 +15,10 @@ class Service():
         self.id = id
 
     def create_note(self, title, body):
-        note = Note(self.id, title, body, self.date)
-        print(note)
-        print(note.id)
+        date = datetime.datetime.today()
+        note = Note(self.id, title, body, date)
         self.notes.add_note(note)
-        self.id += 1
+        self.notes.update_id()
 
     def show_all_notes(self):
         print(self.notes.show_all_notes())
@@ -34,8 +33,9 @@ class Service():
         self.notes.load_notes()
 
     def edit_note(self, id, title, body):
-        self.notes.edit_note(id, title, body)
+        date = datetime.datetime.today()
+        self.notes.edit_note(id, title, body, date)
 
     def delete_note(self, id):
         self.notes.delete_note(id)
-        self.id -= 1
+        self.notes.update_id()

@@ -1,5 +1,3 @@
-import datetime
-
 class Note():
     def __init__(self, id, title, body, date):
         self._id = id
@@ -39,5 +37,5 @@ class Note():
         return self._date
     
     @date.setter
-    def date(self):
-        self._date = datetime.datetime.today()
+    def date(self, date):
+        self._date = date

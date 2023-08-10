@@ -44,12 +44,12 @@ class ListNotes():
                 self.list_notes.append(Note(id, title, body, date))
         print("Заметки загружены")
 
-    def edit_note(self, id, title, body):
+    def edit_note(self, id, title, body, date):
         for note in self.list_notes:
             if note.id == id:
                 note.title = title
                 note.body = body
-                note.date
+                note.date = date
         print("Заметка изменена")
 
     def delete_note(self, id):
@@ -57,6 +57,12 @@ class ListNotes():
             if note.id == id:
                 self.list_notes.remove(note)
         print("Заметка удалена")
+
+    def update_id(self):
+        id = 0
+        for note in self.list_notes:
+            note.id = id
+            id += 1
 
 
         
