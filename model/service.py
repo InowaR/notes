@@ -8,6 +8,12 @@ class Service():
         self.date = datetime.datetime.today()
         self.notes = ListNotes()
 
+    def get_length(self):
+        return len(self.notes.get_list_notes())
+
+    def set_id(self, id):
+        self.id = id
+
     def create_note(self, title, body):
         note = Note(self.id, title, body, self.date)
         print(note)
